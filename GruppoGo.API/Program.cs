@@ -1,3 +1,4 @@
+using GruppoGo.API.Modules;
 using GruppoGo.Common;
 using GruppoGo.Features;
 using GruppoGo.Infrastructure;
@@ -38,6 +39,5 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
-
+app.MapUsersEndpoints();
 app.Run();

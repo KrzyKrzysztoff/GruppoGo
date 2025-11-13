@@ -18,8 +18,8 @@ namespace GruppoGo.Features.Queries.Users.GetUsers
             CancellationToken cancellationToken)
         {
 
-            var result = await  _userRepository
-                .GetAll(2,2)
+            var result = await _userRepository
+                .GetAll(Convert.ToInt16(request.Page), Convert.ToInt16(request.Size))
                 .ToListAsync(cancellationToken);
 
             var resultDto =_mapper.Map<IEnumerable<UserDto>>(result);
