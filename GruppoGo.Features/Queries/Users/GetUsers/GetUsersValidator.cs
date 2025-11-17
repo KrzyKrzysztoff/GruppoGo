@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace GruppoGo.Features.Queries.Users.GetUsers
 {
-    internal class GetUsersValidator : AbstractValidator<GetUsersRequest>
+    public class GetUsersValidator : AbstractValidator<GetUsersRequest>
     {
         public GetUsersValidator()
         {
             RuleFor(x => x.Size)
-                .GreaterThan(3)
-                .WithMessage("xxxxx");
+                .GreaterThan(0)
+                .WithMessage("Size should be greater than 0.");
 
             RuleFor(x => x.Page)
-                .GreaterThan(2)
-                .WithMessage("eeeeee");
+                .GreaterThan(0)
+                .WithMessage("Page should be greater than 0.");
     
         }
     }

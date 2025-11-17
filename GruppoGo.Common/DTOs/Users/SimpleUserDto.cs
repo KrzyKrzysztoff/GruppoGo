@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GruppoGo.Common.DTOs
+namespace GruppoGo.Common.DTOs.Users
 {
-    public class UserDto
+    public class SimpleUserDto
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;

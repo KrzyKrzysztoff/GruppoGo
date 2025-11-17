@@ -10,6 +10,6 @@ namespace GruppoGo.Features.Queries.Users.Abstractions
 {
     public interface IUserRepository
     {
-        IQueryable<User> GetAll(int page, int size);
+        Task<List<User>> GetAllAsync(int page, int size);
     }
 }

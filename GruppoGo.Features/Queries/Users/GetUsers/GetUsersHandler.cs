@@ -1,4 +1,4 @@
-﻿using GruppoGo.Common.DTOs;
+﻿using GruppoGo.Common.Reponses;
 using GruppoGo.Features.Queries.Users.Abstractions;
 using MediatR;
 using System;
@@ -8,23 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using FluentValidation;
+using GruppoGo.Common.DTOs.Users;
 
 namespace GruppoGo.Features.Queries.Users.GetUsers
 {
     public class GetUsersHandler(IUserRepository _userRepository
-        ,IMapper _mapper) : IRequestHandler<GetUsersQuery.Query, IEnumerable<UserDto>>
+        ,IMapper _mapper
+        ,IValidator<GetUsersRequest> _validator) : IRequestHandler<GetUsersQuery.Query, ApiResponse<UserDto>>
     {
-        public async Task<IEnumerable<UserDto>> Handle(GetUsersQuery.Query request,
+        public async Task<ApiResponse<UserDto>> Handle(GetUsersQuery.Query request,
             CancellationToken cancellationToken)
         {
 
+            //var result2 = _validator.ValidateAsync(request.GetUsersRequest); // do middleware todo
+
             var result = await _userRepository
-                .GetAll(Convert.ToInt16(request.Page), Convert.ToInt16(request.Size))
-                .ToListAsync(cancellationToken);
+                .GetAllAsync(request.Page, request.Size);
 
             var resultDto =_mapper.Map<IEnumerable<UserDto>>(result);
 
-            return resultDto;
+            return new ApiResponse<UserDto>(resultDto);
         }
     }
 }

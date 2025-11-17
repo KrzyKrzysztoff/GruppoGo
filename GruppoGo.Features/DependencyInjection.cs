@@ -1,11 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using GruppoGo.Domain.Entities;
+using GruppoGo.Features.Queries.Users.GetUsers;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using FluentValidation;
 
 namespace GruppoGo.Features
 {
@@ -17,6 +19,7 @@ namespace GruppoGo.Features
                 cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddScoped<IValidator<GetUsersRequest>, GetUsersValidator>();
         }
     }
 }

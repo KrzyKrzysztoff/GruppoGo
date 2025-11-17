@@ -12,13 +12,17 @@ namespace GruppoGo.Infrastructure.Repositories.Users
 {
     public class UserRepository(AppDbContext _dbContext) : IUserRepository
     {
-        public IQueryable<User> GetAll(int page, int size)
+        public async Task<List<User>> GetAllAsync(int page, int size)
         {
-            var users =  _dbContext
+            var users =  await _dbContext
                 .Users
+                .Include(x=>x.Groups)
+                .Include(x=>x.Passes)
+                .Include(x=>x.Visits)
                 .Skip((page - 1) * size)
                 .Take(size)
-                .OrderBy(x => x.FirstName);
+                .OrderBy(x => x.FirstName)
+                .ToListAsync();
 
             return users;
         }

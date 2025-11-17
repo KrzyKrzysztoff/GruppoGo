@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using GruppoGo.Common.DTOs.Users;
+using GruppoGo.Common.DTOs.Group;
 using GruppoGo.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace GruppoGo.Common.Mapping
 {
-    public class UserProfile : Profile
+    public class GroupProfile : Profile
     {
-        public UserProfile()
+        public GroupProfile()
         {
-            CreateMap<User, UserDto>();
-            CreateMap<User, SimpleUserDto>();
+            CreateMap<Group, GroupDto>();
+            CreateMap<Group, SimpleGroupDto>();
         }
+        
     }
 }

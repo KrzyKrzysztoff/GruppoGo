@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace GruppoGo.Common.Reponses
 {
-    public class ApiReponse<T>(IEnumerable<T> Items,
+    public class ApiResponse<T>(IEnumerable<T>? Items,
         string Status = "Success",
         string Message = "Success message")
     {
         public string Status { get; set; } = Status;
         public string Message { get; set; } = Message;
-        public IEnumerable<T> Items { get; set; } = Items;
+        public int ItemsCount { get; set; } = Items != null ? Items.Count() : 0;
+        public IEnumerable<T>? Items { get; set; } = Items;
     }
 }
