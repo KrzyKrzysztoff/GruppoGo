@@ -1,5 +1,5 @@
 ﻿using GruppoGo.Domain.Entities;
-using GruppoGo.Features.Queries.Users.Abstractions;
+using GruppoGo.Features.Users.Infrastructure;
 using GruppoGo.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;

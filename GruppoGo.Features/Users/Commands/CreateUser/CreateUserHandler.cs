@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GruppoGo.Features.Commands.Users.CreateUser
+namespace GruppoGo.Features.Users.Commands.CreateUser
 {
-    internal class CreateUserValidator
+    internal class CreateUserHandler
     {
     }
 }

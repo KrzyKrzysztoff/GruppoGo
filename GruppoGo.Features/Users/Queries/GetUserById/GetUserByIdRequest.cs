@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GruppoGo.Features.Commands.Users.CreateUser
+namespace GruppoGo.Features.Users.Queries.GetUserById
 {
-    internal class CreateUserHandler
+    public class GetUserByIdRequest
     {
+        public Guid Id { get; set; }
     }
 }

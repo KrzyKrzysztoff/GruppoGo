@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using GruppoGo.Common.DTOs.Users;
 using GruppoGo.Common.Reponses;
-using GruppoGo.Features.Queries.Users.GetUsers;
+using GruppoGo.Features.Users.Queries.GetUsers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;

@@ -1,5 +1,6 @@
 ﻿using GruppoGo.Common.DTOs.Users;
 using GruppoGo.Common.Reponses;
+using GruppoGo.Features.Users.Queries.GetUsers;
 using MediatR;
 using System;
 using System.Collections.Generic;

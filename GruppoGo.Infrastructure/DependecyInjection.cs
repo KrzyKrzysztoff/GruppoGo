@@ -1,4 +1,4 @@
-﻿using GruppoGo.Features.Queries.Users.Abstractions;
+﻿using GruppoGo.Features.Users.Infrastructure;
 using GruppoGo.Infrastructure.Persistence;
 using GruppoGo.Infrastructure.Repositories.Users;
 using GruppoGo.Infrastructure.Seed;

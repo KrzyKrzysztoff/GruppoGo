@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GruppoGo.UI", "GruppoGo.UI\GruppoGo.UI.csproj", "{D9EFE8B3-5959-4E16-B174-239FA106E2FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GruppoGo.UI", "GruppoGo.UI\GruppoGo.UI.csproj", "{D9EFE8B3-5959-4E16-B174-239FA106E2FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GruppoGo.API", "GruppoGo.API\GruppoGo.API.csproj", "{5758B743-A89C-4663-9D25-EA555E4C2817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GruppoGo.API", "GruppoGo.API\GruppoGo.API.csproj", "{5758B743-A89C-4663-9D25-EA555E4C2817}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GruppoGo.Features", "GruppoGo.Features\GruppoGo.Features.csproj", "{5217FD65-ABC3-4F0A-BB1B-97DD4170CDEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GruppoGo.Features", "GruppoGo.Features\GruppoGo.Features.csproj", "{5217FD65-ABC3-4F0A-BB1B-97DD4170CDEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GruppoGo.Domain", "GruppoGo.Domain\GruppoGo.Domain.csproj", "{C310D071-A622-4B73-983C-A13A8E3532C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GruppoGo.Domain", "GruppoGo.Domain\GruppoGo.Domain.csproj", "{C310D071-A622-4B73-983C-A13A8E3532C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GruppoGo.Common", "GruppoGo.Common\GruppoGo.Common.csproj", "{F5E29441-D162-4096-94EF-BE12226E5F68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GruppoGo.Common", "GruppoGo.Common\GruppoGo.Common.csproj", "{F5E29441-D162-4096-94EF-BE12226E5F68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GruppoGo.Infrastructure", "GruppoGo.Infrastructure\GruppoGo.Infrastructure.csproj", "{2F00B58C-AF38-4B32-B3AA-D45868B94CA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GruppoGo.Infrastructure", "GruppoGo.Infrastructure\GruppoGo.Infrastructure.csproj", "{2F00B58C-AF38-4B32-B3AA-D45868B94CA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject

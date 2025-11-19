@@ -19,4 +19,10 @@
     <ProjectReference Include="..\GruppoGo.Domain\GruppoGo.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Accounts\Infrastructure\" />
+    <Folder Include="Accounts\Services\" />
+    <Folder Include="Users\Services\" />
+  </ItemGroup>
+
 </Project>

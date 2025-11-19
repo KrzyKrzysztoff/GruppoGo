@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GruppoGo.Features.Queries.Users.Abstractions
+namespace GruppoGo.Features.Users.Infrastructure
 {
     public interface IUserRepository
     {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using GruppoGo.Domain.Entities;
-using GruppoGo.Features.Queries.Users.GetUsers;
+using GruppoGo.Features.Users.Queries.GetUsers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

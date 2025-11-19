@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GruppoGo.Features.Queries.Users.GetUsers
+namespace GruppoGo.Features.Users.Queries.GetUsers
 {
     public class GetUsersRequest(int Size, int Page)
     {

@@ -14,8 +14,6 @@ namespace GruppoGo.Common.DTOs.Users
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
-        public string Login { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
         public IEnumerable<SimpleGroupDto> Groups { get; set; } = [];
         public IEnumerable<SimplePassDto> Passes { get; set; } = [];
         public IEnumerable<SimpleVisitDto> Visits { get; set; } = [];
