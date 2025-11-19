@@ -1,7 +1,9 @@
-﻿using GruppoGo.Features.Users.Infrastructure;
+﻿using GruppoGo.Features.Accounts.Infrastructure;
+using GruppoGo.Features.Users.Infrastructure;
 using GruppoGo.Infrastructure.Persistence;
 using GruppoGo.Infrastructure.Repositories.Users;
 using GruppoGo.Infrastructure.Seed;
+using GruppoGo.Infrastructure.Services.Accounts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +30,7 @@ namespace GruppoGo.Infrastructure
 
             services.AddScoped<DbSeed>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAuthenticateService, AuthenticateService>();
 
         }
     }

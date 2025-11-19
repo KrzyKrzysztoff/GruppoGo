@@ -1,5 +1,6 @@
 using GruppoGo.API.Modules;
 using GruppoGo.Common;
+using GruppoGo.Common.DTOs.Accounts;
 using GruppoGo.Features;
 using GruppoGo.Infrastructure;
 using GruppoGo.Infrastructure.Seed;
@@ -19,6 +20,7 @@ builder.Services.AddCommon();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtSettings"));
 
 var app = builder.Build();
 

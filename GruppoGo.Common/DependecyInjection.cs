@@ -13,6 +13,7 @@ namespace GruppoGo.Common
             services.AddAutoMapper(x=>x.AddProfile(typeof(VisitProfile)));
             services.AddAutoMapper(x=>x.AddProfile(typeof(PassProfile)));
             services.AddAutoMapper(x=>x.AddProfile(typeof(ScheduleProfile)));
+
         }
     }
 }
