@@ -7,9 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Accounts\Services\**" />
+    <Compile Remove="Users\Services\**" />
+    <EmbeddedResource Remove="Accounts\Services\**" />
+    <EmbeddedResource Remove="Users\Services\**" />
+    <None Remove="Accounts\Services\**" />
+    <None Remove="Users\Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.1.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.0" />
-    <PackageReference Include="MediatR" Version="13.1.0" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.21" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
@@ -18,11 +27,6 @@
   <ItemGroup>
     <ProjectReference Include="..\GruppoGo.Common\GruppoGo.Common.csproj" />
     <ProjectReference Include="..\GruppoGo.Domain\GruppoGo.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Accounts\Services\" />
-    <Folder Include="Users\Services\" />
   </ItemGroup>
 
 </Project>

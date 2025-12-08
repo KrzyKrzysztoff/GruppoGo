@@ -11,19 +11,26 @@ using System.Threading.Tasks;
 
 namespace GruppoGo.Features.Accounts.Commands
 {
-    public class AuthenticateUserHandler(IAuthenticateService _authenticateService,
-        JwtOptions _jwtOptions)
+    public class AuthenticateUserHandler(IAuthenticateService _authenticateService)
         : IRequestHandler<AuthenticateUserCommand.Command, ApiResponse<AuthenticateDto>>
     {
         public Task<ApiResponse<AuthenticateDto>> Handle(AuthenticateUserCommand.Command request, CancellationToken cancellationToken)
         {
-            bool isValidSignIn = request.LoginDto.Email == "krzys@wp.pl"
-                && request.LoginDto.Password == "Password123!";
+            bool isValidSignIn = request.LoginDto.Email == "1"
+                && request.LoginDto.Password == "1";
+      
 
             if (!isValidSignIn)
                 return Task.FromResult(new ApiResponse<AuthenticateDto>(null, "False login or password", "Error message"));
 
-            var token = _authenticateService.GenerateTokenJwt(request.LoginDto.Email, _jwtOptions);
+            var jwtOptions = new JwtOptions
+            {
+                Audience = "www.test.org",
+                Issuer = "www.test.org",
+                SecretKey = "secret"
+            };
+
+            var token = _authenticateService.GenerateTokenJwt(request.LoginDto.Email, jwtOptions);
 
             var authenticateDtoItems = new List<AuthenticateDto>
             {
