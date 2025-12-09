@@ -1,16 +1,17 @@
-﻿using GruppoGo.Common.Reponses;
+﻿using AutoMapper;
+using FluentValidation;
+using GruppoGo.Common.DTOs.Users;
+using GruppoGo.Common.Reponses;
+using GruppoGo.Features.Queries.Users.GetUsers;
+using GruppoGo.Features.Users.Infrastructure;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using AutoMapper;
-using FluentValidation;
-using GruppoGo.Common.DTOs.Users;
-using GruppoGo.Features.Users.Infrastructure;
-using GruppoGo.Features.Queries.Users.GetUsers;
 
 namespace GruppoGo.Features.Users.Queries.GetUsers
 {
@@ -24,10 +25,15 @@ namespace GruppoGo.Features.Users.Queries.GetUsers
 
             //var result2 = _validator.ValidateAsync(request.GetUsersRequest); // do middleware todo
 
-            var result = await _userRepository
-                .GetAllAsync(request.Page, request.Size);
+            var result =  _userRepository.GetAll();
 
-            var resultDto = _mapper.Map<IEnumerable<UserDto>>(result);
+            var filtredResult = await result
+                .OrderBy(x => x.FirstName)
+                .Skip((request.Page - 1) * request.Size)
+                .Take(request.Size)
+                .ToListAsync(cancellationToken: cancellationToken);
+
+            var resultDto = _mapper.Map<ICollection<UserDto>>(filtredResult);
 
             return new ApiResponse<UserDto>(resultDto);
         }

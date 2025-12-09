@@ -12,19 +12,35 @@ namespace GruppoGo.Infrastructure.Repositories.Users
 {
     public class UserRepository(AppDbContext _dbContext) : IUserRepository
     {
-        public async Task<List<User>> GetAllAsync(int page, int size)
+        public IQueryable<User> GetAll(int page, int size)
         {
-            var users =  await _dbContext
+            var users = _dbContext
                 .Users
-                .Include(x=>x.Groups)
-                .Include(x=>x.Passes)
-                .Include(x=>x.Visits)
-                .Skip((page - 1) * size)
-                .Take(size)
-                .OrderBy(x => x.FirstName)
-                .ToListAsync();
+                .Include(x => x.Groups)
+                .Include(x => x.Passes)
+                .Include(x => x.Visits);
 
             return users;
+        }
+
+        public async Task<User> GetById(Guid Id)
+        {
+            var users = _dbContext.Users.AsEnumerable();
+            ICollection<User> users3 = _dbContext.Users.ToList();
+            var users2 = _dbContext.Users.ToList();
+
+            users3.Add()
+           users.Add
+
+            foreach (var item in users)
+            {
+                item.Id = "asd";
+            }
+            var user = await _dbContext.
+                Users.
+                FirstOrDefaultAsync(x => x.Id == Id);
+
+
         }
     }
 }
