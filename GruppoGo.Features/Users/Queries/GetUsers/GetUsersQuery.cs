@@ -13,10 +13,7 @@ namespace GruppoGo.Features.Queries.Users.GetUsers
 {
     public static class GetUsersQuery
     {
-        public record Query(GetUsersRequest GetUsersRequest) : IRequest<ApiResponse<UserDto>>
-        {
-            public int Size { get; set; } = GetUsersRequest.Size;
-            public int Page { get; set; } = GetUsersRequest.Page;
-        }
+        public record Query(GetUsersRequest GetUsersRequest) : IRequest<ApiResponse<UserDto>>;
+ 
     }
 }

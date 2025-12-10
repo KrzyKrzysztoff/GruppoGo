@@ -29,8 +29,8 @@ namespace GruppoGo.Features.Users.Queries.GetUsers
 
             var filtredResult = await result
                 .OrderBy(x => x.FirstName)
-                .Skip((request.Page - 1) * request.Size)
-                .Take(request.Size)
+                .Skip((request.GetUsersRequest.Size - 1) * request.GetUsersRequest.Size)
+                .Take(request.GetUsersRequest.Size)
                 .ToListAsync(cancellationToken: cancellationToken);
 
             var resultDto = _mapper.Map<ICollection<UserDto>>(filtredResult);

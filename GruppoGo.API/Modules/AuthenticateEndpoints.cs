@@ -13,7 +13,8 @@ namespace GruppoGo.API.Modules
             {
                 var result = await mediator.Send(new AuthenticateUserCommand.Command(logindto));
                 return Results.Ok(result);
-            });
+            })
+            .WithTags("Authenticate");
         }
     }
 }

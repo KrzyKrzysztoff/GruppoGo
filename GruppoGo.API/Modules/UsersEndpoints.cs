@@ -2,6 +2,7 @@
 using GruppoGo.Common.DTOs.Users;
 using GruppoGo.Common.Reponses;
 using GruppoGo.Features.Queries.Users.GetUsers;
+using GruppoGo.Features.Users.Queries.GetUserById;
 using GruppoGo.Features.Users.Queries.GetUsers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -15,13 +16,15 @@ namespace GruppoGo.API.Modules
         {
            app.MapGet("/api/user/{id}", async(Guid id, IMediator mediator) =>
             {
-                //var query = new GetUserByIdQuery.Query(id);
-                //var result = await mediator.Send(query);
-                //if (result == null)
-                //{
-                //    return Results.NotFound();
-                //}
-                return Results.Ok();
+                var request = new GetUserByIdRequest() { Id = id }; 
+
+                var query = new GetUserByIdQuery.Query(request);
+                var result = await mediator.Send(query);
+                if (result == null)
+                {
+                    return Results.NotFound();
+                }
+                return Results.Ok(result);
             }).WithTags("Users")
             .WithName("GetUserById")
             .WithSummary("Get a paginated list of users")

@@ -11,6 +11,6 @@ namespace GruppoGo.Features.Users.Infrastructure
     public interface IUserRepository
     {
         IQueryable<User> GetAll();
-        Task<User> GetById(Guid Id);
+        Task<User?> GetByIdAsync(Guid Id);
     }
 }
