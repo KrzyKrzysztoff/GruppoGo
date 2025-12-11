@@ -1,6 +1,6 @@
-@GruppoGo.API_HostAddress = http://localhost:5269
+@GruppoGo.API_HostAddress = http://localhost:7041
+GET {{GruppoGo.API_HostAddress}}/api/user/96920D22-9E17-464C-B371-281935CAA738
 
-GET {{GruppoGo.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

@@ -1,4 +1,4 @@
-using GruppoGo.API.Modules;
+﻿using GruppoGo.API.Modules;
 using GruppoGo.Common;
 using GruppoGo.Common.DTOs.Accounts;
 using GruppoGo.Features;
@@ -22,8 +22,22 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtSettings"));
 
+// 1. Dodaj politykę CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazorClient",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7221") // adres Twojego Blazor WebAssembly
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
+// 2. Włącz CORS
+app.UseCors("AllowBlazorClient");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
